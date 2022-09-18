@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoilCoin</title>
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;   user-scalable=0;" name="viewport">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+  <link rel="manifest" href="img/icons/site.webmanifest">
+  <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <meta charset="utf-8">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: 'Fira Code', monospace;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 960px) {
+      html {
+        font-size: 18px;
+      }
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #dddddd;
+      transition: transform 0.25s;
+	    will-change: transform;
+    }
+
+    section {
+      padding: 2rem 0;
+    }
+
+    section:not(:first-of-type) {
+      padding-top: 0;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 4rem 0;
+      }
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    h2::before {
+      display: inline-block;
+      content: "#";
+      padding-right: .5em;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @media (min-width: 960px) {
+      .container {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    /* HEADER */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+    }
+
+    .little-logo {
+      display: flex;
+    }
+
+    .little-logo__coin {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+      padding: .25em;
+      margin-right: 1em;
+      background: linear-gradient(#b21f1f, #fdbb2d);
+      box-shadow: 0 2em 9em #b21f1f;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .little-logo__title {
+      font-size: 1.2rem;
+      line-height: 2em;
+      letter-spacing: .3em;
+      text-align: center;
+      font-family: "Fira Code";
+      font-weight: bolder;
+      background-image: linear-gradient(#fdbb2d, #b21f1f);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .main-menu__item {
+      font-size: 1.2rem;
+      color: #dddddd;
+      text-decoration: none;
+    }
+
+    .main-menu__item:not(:last-child) {
+      margin-right: 1em;
+    }
+
+    .main-menu__item:hover {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* LOGO SECTION */
+
+    #logo-section {
+      height: calc(100vh - 4em);
+      min-height: 45em;
+      padding: 4rem 0;
+    }
+
+    .logo {
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo__coin {
+      font-size: 10rem;
+      line-height: 15rem;
+      margin: 0 auto;
+      padding: .22em;
+      width: 15rem;
+      height: 15rem;
+      background: linear-gradient(#b21f1f, #fdbb2d);
+      box-shadow: 0 4rem 9rem #b21f1f;
+      border-radius: 50%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .logo__title {
+      width: 3em;
+      font-size: 6rem;
+      line-height: 7rem;
+      letter-spacing: .2em;
+      margin: 0;
+      text-align: center;
+      font-family: "Fira Code";
+      font-weight: bolder;
+      background-image: linear-gradient(#fdbb2d, #b21f1f);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .logo__subtitle {
+      font-size: 1.3rem;
+      max-width: 30em;
+      color: #ccc;
+      text-align: center;
+    }
+
+    /* MESSAGE SECTION */
+
+    .message-box {
+      font-size: 1.7rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 .3rem .5rem #fdbb2d, 0 -.3rem .5rem #b21f1f;
+      color: #dddddd;
+      border-radius: .2em;
+      padding: 3rem 1.5rem;
+      box-sizing: border-box;
+      background-image: linear-gradient(#fdbb2d, #b21f1f);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    @media (min-width: 768px) {
+      .message-box {
+        padding: 4rem 2rem;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .message-box {
+        padding: 7rem 4rem;
+      }
+    }
+
+    /* FAQ SECTION */
+
+    .faq {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .faq__question::before {
+      display: inline-block;
+      content: "+";
+      padding-right: .5em;
+    }
+
+    footer {
+      color: #777777;
+      padding: 1rem 0 3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="little-logo">
+      <div class="little-logo__coin">
+        <img src="img/spring-icon.svg">
+      </div>
+      <div class="little-logo__title">
+        coil
+      </div>
+    </div>
+    <nav class="main-menu">
+      <a href="#tokenomics-section" class="main-menu__item">Tokenomics</a>
+      <a href="#faq-section" class="main-menu__item">FAQ</a>
+    </nav>
+  </header>
+
+  <!-- LOGO SECTION -->
+
+  <section id="logo-section" class="container">
+    <div class="logo">
+      <div class="logo__coin">
+        <img src="img/spring-icon.svg">
+      </div>
+      <h1 class="logo__title">
+        coil
+      </h1>
+      <p class="logo__subtitle">
+        The COIL token has a built in elevator system, that helps our chart
+        reach higher lows <nobr>every single day</nobr>
+      </p>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS SECTION -->
+
+  <section id="tokenomics-section" class="container">
+    <h2>Tokenomics</h2>
+    <p>
+      Every day, a new milestone at a certain price will be set which will act
+      as new support. That price can't be broken. Meaning, if the support is
+      retested sells will not go through.
+    </p>
+  </section>
+  
+  <!-- MESSAGE SECTION -->
+
+  <section id="message-section" class="container">
+    <p class="message-box">
+      Every time that support is hit, the contract will automatically trigger
+      0% tax on buys for 1 hours. We call that the <nobr>"Happy hour".</nobr>
+    </p>
+  </section>
+
+  <!-- FAQ SECTION -->
+
+  <section id="faq-section" class="container">
+    <h2>FAQ</h2>
+    <ul class="faq">
+      <li class="faq__item">
+        <h3 class="faq__question">When is the new milestone set?</h3>
+        <p class="faq__answer">
+          Every day a new milestone (support) will be set at 6PM UTC.
+        </p>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__question">What is it happy hour?</h3>
+        <p class="faq__answer">
+          Happy hour is a 1 hour period where taxes on buys will be set to 0%.
+          Happy hour occurs whenever the previous support is retested.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="container">
+    (c) hello@coilcoin.io 2022
+  </footer>
+
+  <script lang="javascript">
+    const page = document.querySelector('body');
+
+    let currentPos = window.pageYOffset;
+    var maxOffset = window.scrollMaxY || (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+
+    const update = () => {
+      const newPos = window.pageYOffset;
+      const diff = newPos - currentPos;
+      const speed = diff * 0.01 + 1;
+      
+      page.style.transform = `scaleY(${ speed })`;
+      
+      currentPos = newPos;
+      
+      requestAnimationFrame(update);
+    }
+
+    update();
+  </script>
+</body>
+</html>
